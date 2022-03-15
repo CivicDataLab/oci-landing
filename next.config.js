@@ -4,6 +4,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-}
+  images: {
+    domains: ['cdn-images-1.medium.com'],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

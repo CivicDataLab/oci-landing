@@ -1,24 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import BrandingImg from '/public/assets/images/branding.png'
+import BrandingImg from '/public/assets/images/branding.png';
 
-const Branding = () => {
+const Branding = ({ data }) => {
   return (
     <Wrapper>
+      <h2 className="sr-only">What we do</h2>
       <Sidebar>
         <Image src={BrandingImg} placeholder="blur" />
       </Sidebar>
       <NotSidebar>
-        <p>
-          Open Contracting India is an initiative by CivicDataLab in
-          partnership with Open Contracting Partnership which aims at making
-          public procurements processed in India more efficient, accessible and
-          participatory. <br /> <br /> We do this by onboarding governments to international
-          data standards for curating and releasing data, developing platforms
-          to analyse their data for better decisions, creating case studying
-          and resource material to understand the gaps and benefits of actions.
-        </p>
+        {data.map((item, index) => (
+          <p key={index} dangerouslySetInnerHTML={{ __html: item }} />
+        ))}
       </NotSidebar>
     </Wrapper>
   );
@@ -50,4 +45,8 @@ const NotSidebar = styled.div`
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: 50%;
+
+  p:not(:first-child) {
+    margin-top: 20px;
+  }
 `;

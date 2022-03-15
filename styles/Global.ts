@@ -32,6 +32,7 @@ html {
   --color-violet-3 : ${theme.color_violet_3};
   --color-sapphire-3 : ${theme.color_sapphire_3};
   --color-sapphire-5 : ${theme.color_sapphire_5};
+  --color-teal: ${theme.color_teal};
 
   --color-success : ${theme.color_success};
   --color-error : ${theme.color_error};
@@ -73,9 +74,9 @@ html {
 
   --nav-bg: var(--color-background-darker);
   --nav-bg-hover: #06505c;
-  --nav-submenu: var(--color-carrot-3);
+  --nav-submenu: var(--color-sapphire-3);
   --nav-submenu-hover: var(--color-carrot);
-  --nav-mobile: var(--color-sapphire-3);
+  --nav-mobile: var(--color-background-darker);
 
   box-sizing: border-box;
 
@@ -88,7 +89,7 @@ html {
 }
 
 :focus-visible {
-  outline: 3px solid #78aeda !important;
+  outline: 3px solid #b11f12 !important;
 }
 
 body {
@@ -132,6 +133,12 @@ ul, ol {
     white-space: nowrap;
     width: 1px;
   }
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.3;
 }
 
 .container {

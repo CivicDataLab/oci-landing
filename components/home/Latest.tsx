@@ -1,34 +1,18 @@
 import styled from 'styled-components';
 
-const latest = [
-  {
-    name: 'Approved cost for the eCourts Phase II Schemes in 2015 was Rs. 1670 crores for 4 years, of which approximately 70% has been utilized so far.',
-    link: '#',
-  },
-  {
-    name: 'In 2021, a new scheme - SAMBAL - was introduced under the Ministry of Women and Child Development by combining the budgets for 7 other schemes, including One Stop Center and Mahila Police Volunteers.',
-    link: '#',
-  },
-  {
-    name: 'Expenditure on nation-wide elections, on average, formed  x% of total expenditure of law and justice ministry between 2015-16 and 2019-20.',
-    link: '#',
-  },
-];
-
-const Latest = () => {
+const Latest = ({ data }) => {
   return (
     <Wrapper>
       <div>
-        <h2 className="heading">Do You Know?</h2>
-        <p className="home__sub-head">
-          Everything you need to analyse the data more efficiently
-        </p>
+        <h2 className="heading">Here are some of our recent works</h2>
       </div>
       <ul>
-        {latest.map((news, index) => (
+        {data.map((news, index) => (
           <li key={`latest-${index}`}>
-            <span>{`0${index + 1}`}</span>
-            <a href={news.link}>{news.name}</a>
+            <a href={news.link}>
+              <span>{`0${index + 1}`}</span>
+              {news.text}
+            </a>
           </li>
         ))}
       </ul>
@@ -48,8 +32,9 @@ const Wrapper = styled.section`
     flex-grow: 1;
     flex-basis: 25rem;
 
-    p {
-      line-height: 1.5;
+    h2 {
+      position: sticky;
+      top: 4px;
     }
   }
 
@@ -60,31 +45,30 @@ const Wrapper = styled.section`
   }
 
   li {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: transparent;
+    line-height: 1.5;
+    font-weight: 600;
+    transition: text-decoration-color 0.3s ease, transform 0.3s ease;
+
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease;
+
     &:hover {
+      text-decoration-color: var(--color-primary);;
       transform: translateX(22px);
 
       span {
         background-color: var(--color-primary);
         color: var(--text-dark-high);
       }
-    }
-  }
-
-  a {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-
-    display: block;
-    line-height: 1.5;
-    font-weight: 600;
-    transition: text-decoration-color 0.3s ease;
-
-    &:hover {
-      text-decoration-color: currentColor;
     }
   }
 
@@ -98,8 +82,5 @@ const Wrapper = styled.section`
     border-radius: 50%;
     line-height: 1.2;
     transition: color 0.3s ease, background-color 0.3s ease;
-
-    text-decoration: none;
-    display: inline-block;
   }
 `;

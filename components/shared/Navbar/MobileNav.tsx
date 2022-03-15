@@ -57,7 +57,7 @@ const MobNav = ({ data }) => {
               <a>
                 <Image
                   className="logo"
-                  src="/assets/images/oci_logo.png"
+                  src="/assets/images/oci_assam_light.png"
                   alt="oci logo"
                   width={166}
                   height={40}
@@ -184,7 +184,7 @@ const Header = styled.header`
 `;
 
 const MenuWrapper = styled.nav`
-  background-color: var(--nav-mobile);
+  background-color: var(--color-secondary);
   color: var(--text-dark-high);
   height: 100%;
 
@@ -205,7 +205,7 @@ const MenuHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--nav-bg);
+  background-color: var(--color-sapphire-3);
   height: 4rem;
   padding-left: 1.5rem;
 

@@ -9,6 +9,8 @@ export const DEFAULT_THEME = {
   background_light: '#E8DED4',
   background_lighter: '#FFFFFF',
 
+  color_teal: '#06464A',
+
   color_violet: '#B881C7',
   color_honey: '#FBB670',
   color_amazon: '#69BC99',
@@ -33,7 +35,7 @@ export const DEFAULT_THEME = {
   grey_200: '#6C666E',
   grey_300: '#8E888F',
   grey_400: '#AFABB0',
-  grey_500: '#D1CDD1',
+  grey_500: '#CDD1D1',
   grey_600: '#F2EFF2',
 
   text_dark_high: 'rgba(255, 255, 255, 1)',
