@@ -5,10 +5,11 @@ import Image from 'next/image';
 import MobNav from './MobileNav';
 import { ArrowDown, ArrowTail } from 'components/icons';
 import styled from 'styled-components';
+import Logo from '/public/assets/images/oci_logo.png'
 
 const data = {
   site: 'OPub',
-  logo: '/assets/images/oci_assam_light.png',
+  logo: '/assets/images/oci_logo.png',
   links: [
     {
       link: 'https://assam.open-contracting.in/about',
@@ -101,10 +102,11 @@ const Nav = () => {
                 {data.logo ? (
                   <Image
                     className="logo"
-                    src={data.logo}
+                    src={Logo}
                     alt={`${data.site} logo`}
-                    width={220}
-                    height={46}
+                    width={291}
+                    height={40}
+                    placeholder="blur"
                   ></Image>
                 ) : (
                   <h1>{data.site || 'Opub'}</h1>

@@ -1,19 +1,19 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 const Seo: React.FC<{ seo?: any }> = ({ seo }) => {
-  const router = useRouter();
+  // const router = useRouter();
 
   const title =
     seo && seo.title
       ? seo.title
-      : 'Budgets for Justice - A JusticeHub Initiative';
+      : 'Open Contracting India';
   const description =
     seo && seo.description
       ? seo.description
       : 'The Budgets for Justice platform brings together budget data to reveal trends and patterns in budget allocation and expenditures for the law and justice sector.';
 
-  const url = `https://budgets.justicehub.in${router.asPath || ''}`;
+  const url = `https://open-contracting.in/`;
   return (
     <Head>
       {title && (
@@ -44,16 +44,16 @@ const Seo: React.FC<{ seo?: any }> = ({ seo }) => {
       {/* Image */}
       <meta
         property="og:image"
-        content="https://budgets.justicehub.in/assets/images/share.jpg"
+        content="https://open-contracting.in/assets/images/branding.png"
       />
       <meta
         property="twitter:image"
-        content="https://budgets.justicehub.in/assets/images/share.jpg"
+        content="https://open-contracting.in/assets/images/branding.png"
       />
 
       <meta
         name="application-name"
-        content="Budgets for Justice - A JusticeHub Initiative"
+        content="Open Contracting India"
       />
     </Head>
   );

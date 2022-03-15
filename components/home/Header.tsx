@@ -1,42 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-function shuffle(array) {
-  let currentIndex = array.length,
-    randomIndex;
-
-  // While there remain elements to shuffle...
-  while (currentIndex != 0) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
-
 const Header = ({ data }) => {
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    // shuffle and select 3
-    const selectedList = shuffle(data);
-    const slicedList = selectedList.slice(0, 3);
-    setList(slicedList);
-  }, [data]);
 
   return (
     <Wrapper>
       <div className="container">
         <h2>Did you know?</h2>
         <ul>
-          {list.map((item, index) => (
+          {data.map((item, index) => (
             <li key={`homeHeader-${index}`}>
               <span></span> {item.content}
             </li>
