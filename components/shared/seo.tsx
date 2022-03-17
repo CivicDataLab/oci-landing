@@ -11,7 +11,7 @@ const Seo: React.FC<{ seo?: any }> = ({ seo }) => {
   const description =
     seo && seo.description
       ? seo.description
-      : 'The Budgets for Justice platform brings together budget data to reveal trends and patterns in budget allocation and expenditures for the law and justice sector.';
+      : ' The Open Contracting India aims at making public procurements in India more efficient, accessible and participatory by publishing standardized data, analytics and building capacity.';
 
   const url = `https://open-contracting.in/`;
   return (
