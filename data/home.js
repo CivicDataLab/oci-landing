@@ -14,8 +14,8 @@ export const didYouKnow = [
 ];
 
 export const branding = [
-  '<strong>Open Contracting India</strong> is an initiative by CivicDataLab in partnership with Open Contracting Partnership that aims at making public procurements processed in India more efficient, accessible and participatory.',
-  'We do this by onboarding governments to international data standards for curating and releasing data, developing platforms to analyse their data for better decision-making, creating case studying and resource material to understand the gaps and benefits of actions.',
+  '<strong>Open Contracting India</strong> is an initiative by CivicDataLab in partnership with Open Contracting Partnership that aims at making public procurements processes in India more efficient, accessible and participatory.',
+  'We do this by onboarding governments to international data standards for curating and releasing data, developing platforms to analyse their data for better decision-making, creating case studies and resource material to understand the gaps and benefits of actions.',
 ];
 
 export const latest = [
