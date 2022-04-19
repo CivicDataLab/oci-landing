@@ -25,7 +25,7 @@ export const latest = [
   },
   {
     text: '“Breaking the Silos”-  a guide for initiating proactive dialogues in public procurement.',
-    link: '#',
+    link: 'https://drive.google.com/file/d/1xiOlkfglXdMHiZ5Mm-2rz7IhUClhEYy3/view',
   },
   {
     text: 'Health Procurement Performance Index for Himachal Pradesh',
