@@ -24,6 +24,10 @@ export const latest = [
     link: 'https://assam.open-contracting.in/',
   },
   {
+    text: 'Using data analysis to spot gaps in access to maternal and child health services',
+    link: 'https://www.open-contracting.org/2022/04/06/using-data-analysis-to-spot-gaps-in-access-to-maternal-and-child-health-services',
+  },
+  {
     text: '“Breaking the Silos”-  a guide for initiating proactive dialogues in public procurement.',
     link: 'https://drive.google.com/file/d/1xiOlkfglXdMHiZ5Mm-2rz7IhUClhEYy3/view',
   },
