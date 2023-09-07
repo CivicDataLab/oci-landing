@@ -8,7 +8,7 @@ const Branding = ({ data }) => {
     <Wrapper>
       <h2 className="sr-only">What we do</h2>
       <Sidebar>
-        <Image src={BrandingImg} placeholder="blur" />
+        <Image src={BrandingImg} placeholder="blur" alt="" />
       </Sidebar>
       <NotSidebar>
         {data.map((item, index) => (
