@@ -60,7 +60,7 @@ export const getServerSideProps = async ({ req, res }) => {
 
   return {
     props: {
-      stories: stories,
+      stories,
       slicedList,
     },
   };
