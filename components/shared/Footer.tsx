@@ -32,16 +32,22 @@ const Footer = () => {
             <h2>Other pages</h2>
             <ul>
               <li>
-                <a href="/datasets">Contracts Data</a>
+                <a href="https://assam.open-contracting.in/datasets">
+                  Contracts Data
+                </a>
               </li>
               <li>
-                <a href="/kpi">Data Analysis</a>
+                <a href="https://assam.open-contracting.in/kpi">
+                  Data Analysis
+                </a>
               </li>
               <li>
-                <a href="/stories">Data Stories</a>
+                <a href="https://assam.open-contracting.in/stories">
+                  Data Stories
+                </a>
               </li>
               <li>
-                <a href="/about">About Us</a>
+                <a href="https://assam.open-contracting.in/about">About Us</a>
               </li>
             </ul>
           </Pages>
