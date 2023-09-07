@@ -1,5 +1,4 @@
 import React from 'react';
-import Parser from 'rss-parser';
 import {
   Latest,
   Blogs,
@@ -11,8 +10,6 @@ import { Seo } from 'components/shared';
 import { getMediumBanner, shuffle } from 'utils';
 
 import * as data from 'data/home';
-
-const parser = new Parser();
 
 const Home: React.FC<{ stories: any; slicedList: any }> = ({
   stories,
@@ -44,18 +41,19 @@ export const getServerSideProps = async ({ req, res }) => {
     'public, s-maxage=86400, stale-while-revalidate=59'
   );
 
-  const storiesFetch = await parser.parseURL(
-    'https://medium.com/feed/civicdatalab/tagged/open-contracting'
-  );
+  const storiesFetch = await fetch(
+    'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/civicdatalab/tagged/open-contracting'
+  ).then((res) => res.json());
 
-  const stories = storiesFetch
-    ? storiesFetch.items.map((item) => ({
-        title: item.title,
-        creator: item.creator,
-        link: item.link,
-        banner: getMediumBanner(item['content:encoded']),
-      }))
-    : [];
+  const stories =
+    storiesFetch.status === 'ok'
+      ? storiesFetch.items.map((item) => ({
+          title: item.title,
+          creator: item.author,
+          link: item.link,
+          banner: getMediumBanner(item['content']),
+        }))
+      : [];
 
   const selectedList = shuffle(data.didYouKnow);
   const slicedList = selectedList.slice(0, 3);
