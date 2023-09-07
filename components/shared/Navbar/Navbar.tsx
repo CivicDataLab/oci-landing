@@ -5,7 +5,7 @@ import Image from 'next/image';
 import MobNav from './MobileNav';
 import { ArrowDown, ArrowTail } from 'components/icons';
 import styled from 'styled-components';
-import Logo from '/public/assets/images/oci_logo.png'
+import Logo from '/public/assets/images/oci_logo.png';
 
 const data = {
   site: 'OPub',
@@ -98,20 +98,18 @@ const Nav = () => {
         <div className="container">
           <div className={data.logo && 'header__logo'}>
             <Link href="/">
-              <a>
-                {data.logo ? (
-                  <Image
-                    className="logo"
-                    src={Logo}
-                    alt={`${data.site} logo`}
-                    width={291}
-                    height={40}
-                    placeholder="blur"
-                  ></Image>
-                ) : (
-                  <h1>{data.site || 'Opub'}</h1>
-                )}
-              </a>
+              {data.logo ? (
+                <Image
+                  className="logo"
+                  src={Logo}
+                  alt={`${data.site} logo`}
+                  width={291}
+                  height={40}
+                  placeholder="blur"
+                ></Image>
+              ) : (
+                <h1>{data.site || 'Opub'}</h1>
+              )}
             </Link>
           </div>
 
@@ -142,10 +140,8 @@ const Nav = () => {
                                 className="submenu-item"
                               >
                                 <Link href={item.link}>
-                                  <a>
-                                    {item.name}
-                                    <ArrowTail width={24} height={24} />
-                                  </a>
+                                  {item.name}
+                                  <ArrowTail width={24} height={24} />
                                 </Link>
                               </li>
                             ))}
@@ -156,7 +152,6 @@ const Nav = () => {
                       <Link
                         key={`navItemDesktop-${index}`}
                         href={navItem.link}
-                        passHref
                       >
                         <Navitem className={navItem.cta && 'cta'}>
                           {navItem.name}
@@ -225,7 +220,7 @@ const Navlinks = styled.nav`
   }
 `;
 
-const Navitem = styled.a`
+const Navitem = styled.div`
   padding: 12px 24px;
   color: var(--text-dark-high);
   transition: background-color 200ms ease;
@@ -238,8 +233,8 @@ const Navitem = styled.a`
     background-color: var(--color-primary);
 
     &:hover {
-    background-color: var(--color-green);
-  }
+      background-color: var(--color-green);
+    }
   }
 
   &:hover {

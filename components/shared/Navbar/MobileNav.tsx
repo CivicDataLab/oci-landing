@@ -54,15 +54,13 @@ const MobNav = ({ data }) => {
 
           <div className={data.logo && 'header__logo'}>
             <Link href="/">
-              <a>
-                <Image
-                  className="logo"
-                  src="/assets/images/oci_assam_light.png"
-                  alt="oci logo"
-                  width={166}
-                  height={40}
-                ></Image>
-              </a>
+              <Image
+                className="logo"
+                src="/assets/images/oci_assam_light.png"
+                alt="oci logo"
+                width={166}
+                height={40}
+              ></Image>
             </Link>
           </div>
         </div>
@@ -110,10 +108,8 @@ const MobNav = ({ data }) => {
                                 className="submenu-item"
                               >
                                 <Link href={item.link}>
-                                  <a>
-                                    {item.name}
-                                    <ArrowTail width={24} height={24} />
-                                  </a>
+                                  {item.name}
+                                  <ArrowTail width={24} height={24} />
                                 </Link>
                               </li>
                             ))}
