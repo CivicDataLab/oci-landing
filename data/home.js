@@ -24,6 +24,10 @@ export const latest = [
     link: 'https://assam.open-contracting.in/',
   },
   {
+    text: 'Intelligent Data Ecosystem for Assam - Flood Response and Management (IDEA FRM)',
+    link: 'https://drive.google.com/file/d/1WjYlRdyoxliBhyAEJbmN_Q0IXQz8nJBk/view',
+  },
+  {
     text: 'Using data analysis to spot gaps in access to maternal and child health services',
     link: 'https://www.open-contracting.org/2022/04/06/using-data-analysis-to-spot-gaps-in-access-to-maternal-and-child-health-services',
   },
