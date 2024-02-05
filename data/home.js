@@ -28,12 +28,16 @@ export const latest = [
     link: 'https://drive.google.com/file/d/1WjYlRdyoxliBhyAEJbmN_Q0IXQz8nJBk/view',
   },
   {
-    text: 'Using data analysis to spot gaps in access to maternal and child health services',
-    link: 'https://www.open-contracting.org/2022/04/06/using-data-analysis-to-spot-gaps-in-access-to-maternal-and-child-health-services',
+    text: 'Buying Better for the Planet: A Green Public Procurement Guidebook for Assam',
+    link: 'https://drive.google.com/drive/folders/1n0wRDmLBe3sT0Dp0I3DhrwWKySwVnyIV?usp=sharing',
   },
   {
-    text: '“Breaking the Silos”-  a guide for initiating proactive dialogues in public procurement.',
+    text: '“Breaking the Silos”-  a guide for initiating proactive dialogues in public procurement',
     link: 'https://drive.google.com/file/d/1xiOlkfglXdMHiZ5Mm-2rz7IhUClhEYy3/view',
+  },
+  {
+    text: 'Using data analysis to spot gaps in access to maternal and child health services',
+    link: 'https://www.open-contracting.org/2022/04/06/using-data-analysis-to-spot-gaps-in-access-to-maternal-and-child-health-services',
   },
   {
     text: 'Health Procurement Performance Index for Himachal Pradesh',
