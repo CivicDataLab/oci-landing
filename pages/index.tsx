@@ -10,6 +10,8 @@ import { Seo } from 'components/shared';
 import { getMediumBanner, shuffle } from 'utils';
 
 import * as data from 'data/home';
+import fetch from 'node-fetch';
+import { parseStringPromise } from 'xml2js';
 
 const Home: React.FC<{ stories: any; slicedList: any }> = ({
   stories,
@@ -41,28 +43,42 @@ export const getServerSideProps = async ({ req, res }) => {
     'public, s-maxage=86400, stale-while-revalidate=59'
   );
 
-  const storiesFetch = await fetch(
-    'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/civicdatalab/tagged/open-contracting'
-  ).then((res) => res.json());
+  try {
+    const response = await fetch(
+      'https://medium.com/feed/civicdatalab/tagged/open-contracting'
+    );
 
-  const stories =
-    storiesFetch.status === 'ok'
-      ? storiesFetch.items.map((item) => ({
-          title: item.title,
-          creator: item.author,
-          link: item.link,
-          banner: getMediumBanner(item['content']),
-        }))
-      : [];
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
 
-  const selectedList = shuffle(data.didYouKnow);
-  const slicedList = selectedList.slice(0, 3);
+    const xmlData = await response.text();
+    const jsonData = await parseStringPromise(xmlData);
 
-  return {
-    props: {
-      stories,
-      slicedList,
-    },
-  };
+    const stories = jsonData.rss.channel[0].item.map((item) => ({
+      title: item.title[0],
+      creator: item['dc:creator'][0],
+      link: item.link[0],
+      banner: getMediumBanner(item['content:encoded'][0]),
+    }));
+
+    const selectedList = shuffle(data.didYouKnow);
+    const slicedList = selectedList.slice(0, 3);
+
+    return {
+      props: {
+        stories,
+        slicedList,
+      },
+    };
+  } catch (error) {
+    console.error('Fetch error:', error);
+    return {
+      props: {
+        stories: [],
+        slicedList: [],
+      },
+    };
+  }
 };
 export default Home;
